@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Pet Management</h1>
+        <!-- Pet Form -->
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="name">Pet Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Pet Age</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+             <div class="form-group">
+                <label for="gender">Pet Gender</label>
+                <input type="text" class="form-control" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Pet Type</label>
+                <input type="text" class="form-control" id="type" name="type" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Pet</button>
+        </form>
+        <!-- Pet Table -->
+        <table id="petsTable" class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pet in pets %}
+                <tr>
+                    <td>{{ JUJU }}</td>
+                    <td>{{ 5 }}</td>
+                    <td>{{F }}</td>
+                    <td>{{ Golden Retriever }}</td>
+                </tr>
+                <tr>
+                    <td>{{ Sweety }}</td>
+                    <td>{{ 2 }}</td>
+                    <td>{{ M }}</td>
+                    <td>{{ Labrador }}</td>
+                </tr>
+                 <tr>
+                    <td>{{ Chinnu }}</td>
+                    <td>{{ 6 }}</td>
+                    <td>{{ F }}</td>
+                    <td>{{ Labrador }}</td>
+                </tr>
+                <tr>
+                    <td>{{ Fluffy }}</td>
+                    <td>{{ 3 }}</td>
+                    <td>{{ M }}</td>
+                    <td>{{ Labrador }}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#petsTable').DataTable();
+        });
+    </script>
+</body>
+</html>
